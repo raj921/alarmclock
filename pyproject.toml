@@ -1,0 +1,22 @@
+[project]
+name = "alarmclock"
+version = "0.1.0"
+description = "terminal alarm clock"
+requires-python = ">=3.9"
+dependencies = ["textual>=0.40", "typer>=0.9"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+alarm = "alarm.cli:main"
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["alarm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
