@@ -10,7 +10,7 @@ app = typer.Typer(help="terminal alarm clock")
 
 @app.callback(invoke_without_command=True)
 def root(ctx: typer.Context):
-    """terminal alarm clock"""
+  
     if ctx.invoked_subcommand is None:
         Clock().run()
 
@@ -33,7 +33,7 @@ def set(
 
 @app.command()
 def list():
-    """list alarms"""
+  
     s = Store()
     now = datetime.now()
     if not s.rows:
@@ -47,7 +47,7 @@ def list():
 
 @app.command()
 def cancel(nid: int):
-    """cancel an alarm by id"""
+   
     if Store().cancel(nid):
         typer.echo(f"alarm {nid} cancelled")
     else:
@@ -57,7 +57,7 @@ def cancel(nid: int):
 
 @app.command()
 def run():
-    """open the clock"""
+
     Clock().run()
 
 
